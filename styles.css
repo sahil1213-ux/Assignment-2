@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --highlight-color: #ecf0f1;
+    --hover-color: #ff6347;
+    --font-family: 'Arial, sans-serif';
+    --animation-duration: 0.3s;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.recipe-card {
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prep-info {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Highlight the active step */
+.active-step {
+    background-color: #ff6347; /* Highlight color */
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.visible {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Progress bar container */
+.progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: var(--primary-color);
+    width: 0;
+    transition: width var(--animation-duration) ease;
+}
+
+/* Hover effect for non-highlighted steps */
+li:not(.active-step):hover {
+    color: var(--hover-color); /* Change color on hover */
+    text-decoration: underline; /* Underline the text */
+}
+
+
+.active-step {
+    background-color: var(--highlight-color);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 16px;
+}
+
+
+/* Print-friendly styles */
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    .progress-bar-container, #start-cooking, #next-step, #print-recipe {
+        display: none; /* Hide elements that are not needed in print */
+    }
+    #steps {
+        list-style-type: decimal;
+        padding-left: 20px;
+    }
+}
+
+#timer {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: center;
+    color: #e74c3c;
+}
+
+#steps {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+#steps li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+#recipe-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+#recipe-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color var(--animation-duration);
+    margin: 5px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+button.hidden {
+    display: none;
+}
+
+#img-box {
+    height: 400px;
+}
+
+/* Flexbox container for title and image */
+.recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .recipe-container {
+        padding: 10px;
+    }
+
+    #recipe-title {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    #timer {
+        font-size: 1em;
+    }
+
+    #steps li {
+        font-size: 1em;
+    }
+}

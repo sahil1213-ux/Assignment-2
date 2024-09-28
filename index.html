@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="recipe-card">
+        <div class="recipe-container">
+            <h1 id="recipe-title">Chocolate Cake</h1>
+            <div id="img-box">
+                <img id="recipe-img" src="image.png" alt="Recipe Image">
+            </div>
+        </div>
+        <div class="prep-info">
+            <p>Prep Time: 30 minutes | Servings: 4</p>
+        </div>
+        <button id="toggle-ingredients">Show Ingredients</button>
+        <ul id="ingredients" class="hidden">
+            <li>1 cup (200g) sugar</li>
+            <li>1 cup (110g) self-rising flour</li>
+            <li>2 tablespoons cocoa powder</li>
+            <li>2 eggs</li>
+            <li>1/2 stick (60g) melted butter</li>
+            <li>1/2 cup (125ml) milk</li>
+        </ul>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>        
+        <button id="start-cooking">Start Cooking</button>
+    <button id="next-step" class="hidden">Next</button>
+    <button id="print-recipe">Print Recipe</button>
+    <div id="timer">Time Remaining: 00:00</div>
+    <ol id="steps">
+        <li><span style="font-weight: bold;">Preheat the Oven: </span> Preheat your oven to 180°C (350°F).</li>
+        <li> <span style="font-weight: bold;">Mix Ingredients: </span>  In a large bowl, combine the sugar, flour, cocoa powder, eggs, melted butter, and milk.</li>
+        <li> <span style="font-weight: bold;">Beat the Mixture: </span>   Use an electric mixer to beat the ingredients until the mixture is smooth. This should take about 3 minutes.</li>
+        <li> <span style="font-weight: bold; ">Prepare the Cake Pan: </span>   Grease a cake pan and line the bottom with baking paper.</li>
+        <li>
+            <span style="font-weight: bold;">Pour the Batter: </span>   Pour the batter into the prepared cake pan.
+        </li>
+        <li>
+            <span style="font-weight: bold;">Bake: </span>   Bake in the preheated oven for about 40 minutes, or until a skewer inserted into the center of the cake comes out clean.
+        </li>
+        <li>
+            <span style="font-weight: bold;">Cool and Decorate: </span>   Allow the cake to cool in the pan for a few minutes before transferring it to a wire rack to cool completely. Once cooled, you can add frosting, sprinkles, or any other decorations you like.
+        </li>
+    </ol>
+
+
+    <!-- Controls for experimenting with styles -->
+<div class="style-controls">
+    <label for="primary-color">Primary Color:</label>
+    <input type="color" id="primary-color" name="primary-color" value="#3498db">
+
+    <label for="secondary-color">Secondary Color:</label>
+    <input type="color" id="secondary-color" name="secondary-color" value="#2c3e50">
+
+    <label for="highlight-color">Highlight Color:</label>
+    <input type="color" id="highlight-color" name="highlight-color" value="#ecf0f1">
+
+    <label for="font-family">Font Family:</label>
+    <select id="font-family" name="font-family">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="'Times New Roman', serif">Times New Roman</option>
+        <option value="'Courier New', monospace">Courier New</option>
+    </select>
+
+    <label for="animation-duration">Animation Duration (s):</label>
+    <input type="number" id="animation-duration" name="animation-duration" value="0.3" step="0.1" min="0.1">
+
+    <button id="apply-styles">Apply Styles</button>
+</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
